@@ -17,17 +17,17 @@ function MostPopular() {
   ];
 
   const renderCards = pictures.map((card, index) => (
-    <div class="col-lg" key={index}>
-      <div class="card mb-3">
-        <img src={card.img} class="card-img-top" alt="" />
+    <div className="col-lg" key={index}>
+      <div className="card mb-3">
+        <img src={card.img} className="card-img-top" alt="" />
       </div>
     </div>
   ));
 
   return (
     <>
-      <h5 class="display-5 text-center text-muted my-5">Most Popular</h5>
-      <div class="row">{renderCards}</div>
+      <h5 className="display-5 text-center text-muted my-5">Most Popular</h5>
+      <div className="row">{renderCards}</div>
     </>
   );
 }

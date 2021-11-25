@@ -17,7 +17,7 @@ function ShopDropOption() {
     <div className="col-lg" key={index}>
       <div className="card" style={{ backgroundColor: "red", color: "white" }}>
         <div className="card-body text-center">
-          <i class={card.icon} style={{ fontSize: "32px" }}></i>
+          <i className={card.icon} style={{ fontSize: "32px" }}></i>
           <p className="card-text">{card.text}</p>
         </div>
       </div>
@@ -33,7 +33,7 @@ function ShopDropOption() {
           style={{ width: "18rem", backgroundColor: "red", color: "white" }}
         >
           <div className="card-body text-center">
-            <i class="fa fa-car" style={{ fontSize: "32px" }}></i>
+            <i className="fa fa-car" style={{ fontSize: "32px" }}></i>
             <p className="card-text">Curside {"&"} In-Store Pickup</p>
           </div>
         </div>

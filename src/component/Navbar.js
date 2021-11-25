@@ -40,7 +40,7 @@ function Navbar() {
             <li className="nav-item">
               <Link className="nav-link" to="/shoppingcart">
                 <i
-                  class="fa fa-shopping-cart text-white"
+                  className="fa fa-shopping-cart text-white"
                   style={{ fontSize: "19px" }}
                 ></i>
               </Link>
