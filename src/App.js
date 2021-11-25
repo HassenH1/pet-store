@@ -6,6 +6,7 @@ import Home from "./screen/Home/Home";
 import ShopAll from "./screen/ShopAll";
 import Navbar from "./component/Navbar";
 import ShowProduct from "./screen/ShowProduct";
+import Footer from "./component/Footer";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route exact path="shopall" element={<ShopAll />} />
         <Route exact path="item/:id" element={<ShowProduct />} />
       </Routes>
+      <Footer />
     </>
   );
 }

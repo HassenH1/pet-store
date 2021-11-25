@@ -1,24 +1,45 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 function Navbar() {
   const [className, setClassName] = useState();
   const [navColor, setNavColor] = useState();
+  const [navBackground, setNavBackground] = useState();
   const location = useLocation();
+  const navRef = React.useRef();
+  navRef.current = navBackground;
 
   useEffect(() => {
     if (location.pathname !== "/") {
-      setClassName("bg-light");
+      // setClassName("bg-light");
+      setNavBackground("bg-light");
       setNavColor("text-black");
     } else {
-      setClassName("bg-transparent");
-      setNavColor("text-white");
+      // setClassName("bg-transparent");
+      setNavBackground("bg-transparent");
     }
   }, [location]);
 
+  useEffect(() => {
+    document.addEventListener("scroll", handleScroll);
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    const show = window.scrollY > 700;
+    if (show) {
+      setNavBackground("bg-light");
+    } else {
+      setNavBackground("bg-transparent");
+      setNavColor("white");
+    }
+  };
+
   return (
     <nav
-      className={`navbar navbar-expand-lg navbar-light fixed-top ${className}`}
+      className={`navbar navbar-expand-lg navbar-light fixed-top ${navRef.current}`}
       // className="navbar navbar-expand-lg navbar-light position-sticky bg-transparent"
       // className="navbar navbar-expand-lg navbar-light fixed-top bg-light"
       // className="navbar navbar-expand-lg navbar-light fixed-top bg-transparent"

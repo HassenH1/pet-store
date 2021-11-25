@@ -9,16 +9,7 @@ function Blog() {
         <div class="card-body">
           <h5 class="card-title">{blog.title}</h5>
           <p class="card-text">{blog.body}</p>
-          <a href="#" class="btn btn-primary">
-            {blog.btnText}
-          </a>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">{blog.title}</h5>
-          <p class="card-text">{blog.body}</p>
-          <a href="#" class="btn btn-primary">
+          <a href={blog.path} class="btn btn-primary" target="_blank">
             {blog.btnText}
           </a>
         </div>
@@ -31,63 +22,16 @@ function Blog() {
       <div className="col-lg">
         <p class="fs-4 mt-5 text-left text-muted">What's Happening</p>
         {renderBlogs}
-        {/* {renderBlogs} */}
-        {/* <div className="row">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">
-                With supporting text below as a natural lead-in to additional
-                content.
-              </p>
-              <a href="#" class="btn btn-primary">
-                Go somewhere
-              </a>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">
-                With supporting text below as a natural lead-in to additional
-                content.
-              </p>
-              <a href="#" class="btn btn-primary">
-                Go somewhere
-              </a>
-            </div>
-          </div>
-        </div> */}
-        {/* <div className="row">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">
-                With supporting text below as a natural lead-in to additional
-                content.
-              </p>
-              <a href="#" class="btn btn-primary">
-                Go somewhere
-              </a>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">
-                With supporting text below as a natural lead-in to additional
-                content.
-              </p>
-              <a href="#" class="btn btn-primary">
-                Go somewhere
-              </a>
-            </div>
-          </div>
-        </div> */}
       </div>
       <div className="col-lg">
-        <p class="fs-5 my-5 text-left">Recent Video</p>
-        Put video here
+        <p class="fs-4 mt-5 text-left text-muted">Recent Video</p>
+        <iframe
+          src="https://www.youtube.com/embed/n8tR2w0zLeQ"
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          title="video"
+          style={{ height: "85%", width: "100%" }}
+        />
       </div>
     </div>
   );

@@ -57,14 +57,16 @@ const allProducts = [
 
 const blogs = [
   {
-    title: "Special Title Treatment",
-    body: "With supporting text below as a natural lead-in to additional content.",
-    btnText: "Go somewhere",
+    title: "My Dog Reminds Me of What Really Matters.",
+    body: "I was walking my adopted rescue dog, Bruna, in a cemetery before work...",
+    btnText: "Read more..",
+    path: "https://medium.com/@packedby776/my-dog-reminds-me-what-really-matters-1f48c0ad464a",
   },
   {
-    title: "Special Title Treatment",
-    body: "With supporting text below as a natural lead-in to additional content.",
-    btnText: "Go somewhere",
+    title: "A Companionable Furry Friend",
+    body: "Every time I pay a visit to a friend, her Maltipoo runs up to greet me....",
+    btnText: "Read more...",
+    path: "https://medium.com/six-word-photo-story-challenge/a-companionable-furry-friend-dfe9337bcc43",
   },
 ];
 
