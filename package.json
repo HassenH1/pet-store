@@ -1,6 +1,6 @@
 {
-  "homepage": "http://HassenH1.github.io/pet-store",
   "name": "store",
+  "homepage": "https://HassenH1.github.io/pet-store/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
