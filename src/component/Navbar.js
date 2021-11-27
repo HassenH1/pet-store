@@ -2,34 +2,43 @@ import React, { useEffect, useState, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 function Navbar() {
-  const [className, setClassName] = useState();
+  const [navBarPosition, setNavBarPosition] = useState();
   const [navColor, setNavColor] = useState();
   const [navBackground, setNavBackground] = useState();
   const location = useLocation();
   const navRef = React.useRef();
   navRef.current = navBackground;
 
+  console.log(location, "<=-=-=-location?");
+
   useEffect(() => {
     if (location.pathname !== "/") {
       // setClassName("bg-light");
+      setNavBarPosition("position-sticky");
       setNavBackground("bg-light");
       setNavColor("text-black");
     } else {
       // setClassName("bg-transparent");
+      setNavBarPosition("fixed-top");
       setNavBackground("bg-transparent");
     }
   }, [location]);
 
   useEffect(() => {
-    document.addEventListener("scroll", handleScroll);
+    if (location.pathname === "/") {
+      document.addEventListener("scroll", handleScroll);
+    }
     return () => {
-      document.removeEventListener("scroll", handleScroll);
+      if (location.pathname === "/") {
+        document.removeEventListener("scroll", handleScroll);
+      }
     };
   }, []);
 
   const handleScroll = () => {
     const show = window.scrollY > 700;
     if (show) {
+      console.log("hitting here?");
       setNavBackground("bg-light");
     } else {
       setNavBackground("bg-transparent");
@@ -39,7 +48,8 @@ function Navbar() {
 
   return (
     <nav
-      className={`navbar navbar-expand-lg navbar-light fixed-top ${navRef.current}`}
+      className={`navbar navbar-expand-lg navbar-light ${navBarPosition} ${navRef.current}`}
+      // className={`navbar navbar-expand-lg navbar-light fixed-top ${navRef.current}`}
       // className="navbar navbar-expand-lg navbar-light position-sticky bg-transparent"
       // className="navbar navbar-expand-lg navbar-light fixed-top bg-light"
       // className="navbar navbar-expand-lg navbar-light fixed-top bg-transparent"

@@ -19,7 +19,7 @@ function MostPopular() {
 
   return (
     <>
-      <p class="fs-3 my-5 text-center">Most Popular</p>
+      <p className="fs-3 my-5 text-center">Most Popular</p>
       {/* <h5 className="display-5 text-center text-muted my-5">Most Popular</h5> */}
       <div className="row">{renderCards}</div>
     </>
