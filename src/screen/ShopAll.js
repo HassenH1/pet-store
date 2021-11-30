@@ -6,7 +6,6 @@ function ShopAll() {
   const renderCard = allProducts.map((card, index) => (
     <div className="col-lg-4 col-sm-5 my-4 bg-image hover-zoom" key={index}>
       <Link to={`/item/${card.id}`} className="text-decoration-none text-black">
-        {/* <div className="card mb-3 w-25"> */}
         <img src={card.img} className="card-img-top" alt="..." height="260" />
         <div className="card-body">
           <h5 className="card-title">{card.title || "Card title"}</h5>
@@ -17,7 +16,6 @@ function ShopAll() {
             </small>
           </p>
         </div>
-        {/* </div> */}
       </Link>
     </div>
   ));

@@ -1,4 +1,5 @@
 body,
 html {
   font-family: "Vazir", sans-serif;
+  max-width: 1500px;
 }

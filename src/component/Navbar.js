@@ -6,10 +6,8 @@ function Navbar() {
   const [navColor, setNavColor] = useState();
   const [navBackground, setNavBackground] = useState();
   const location = useLocation();
-  const navRef = React.useRef();
+  const navRef = useRef();
   navRef.current = navBackground;
-
-  console.log(location, "<=-=-=-location?");
 
   useEffect(() => {
     if (location.pathname !== "/") {
@@ -22,7 +20,7 @@ function Navbar() {
       setNavBarPosition("fixed-top");
       setNavBackground("bg-transparent");
     }
-  }, [location]);
+  }, [location.pathname]);
 
   useEffect(() => {
     if (location.pathname === "/") {
@@ -38,7 +36,6 @@ function Navbar() {
   const handleScroll = () => {
     const show = window.scrollY > 700;
     if (show) {
-      console.log("hitting here?");
       setNavBackground("bg-light");
     } else {
       setNavBackground("bg-transparent");
