@@ -93,8 +93,8 @@ function Navbar() {
                   style={{ fontSize: "19px" }}
                 ></i>
                 {totalItems > 0 ? (
-                  <span class="position-absolute top-10 start-80 translate-middle p-2 bg-danger border border-light rounded-circle">
-                    <span class="text-white text-sm">{totalItems}</span>
+                  <span className="position-absolute top-10 start-80 translate-middle badge rounded-pill bg-danger">
+                    {totalItems}
                   </span>
                 ) : null}
               </Link>

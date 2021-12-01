@@ -12,10 +12,25 @@ function ShowProduct() {
   const [quantity, setQuantity] = useState(1);
   const [size, setSize] = useState("");
   const [error, setError] = useState("");
+  const [total, setTotal] = useState(0);
+
+  useEffect(() => {
+    totalBasedOnQuantity();
+  }, [quantity, product]);
 
   useEffect(() => {
     setProduct(getItem(params.id));
   }, [params]);
+
+  const totalBasedOnQuantity = () => {
+    let originalPrice = product && product.price.split("$")[1];
+    console.log(originalPrice, "<=-=-=originalPrice");
+    let theTotal = quantity * Number(originalPrice);
+    console.log(theTotal, "<=-=-=-=theTotal???");
+    setTotal(theTotal);
+  };
+
+  console.log(total, "<==-=-=-=what is this total here?");
 
   const modifyQuantity = (type) => {
     if (type === "plus") {
@@ -36,7 +51,6 @@ function ShowProduct() {
 
   const addToCart = () => {
     if (size === "") {
-      // console.log("Please pick a size");
       errorMessage();
       return;
     }
@@ -44,6 +58,7 @@ function ShowProduct() {
       ...product,
       quantity,
       size,
+      total,
     });
   };
 
