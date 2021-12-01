@@ -6,7 +6,7 @@ function ShopAll() {
   const renderCard = allProducts.map((card, index) => (
     <div className="col-lg-4 col-sm-5 my-4 bg-image hover-zoom" key={index}>
       <Link to={`/item/${card.id}`} className="text-decoration-none text-black">
-        <img src={card.img} className="card-img-top" alt="..." height="260" />
+        <img src={card.img} className="img-fluid" alt="..." height="260" />
         <div className="card-body">
           <h5 className="card-title">{card.title || "Card title"}</h5>
           <p className="card-text mb-0">{card.price}</p>
@@ -22,9 +22,7 @@ function ShopAll() {
 
   return (
     <div className="container">
-      {/* <div className="d-flex flex-lg-row flex-column flex-wrap gap-5"> */}
       <div className="row align-items-center">{renderCard}</div>
-      {/* </div> */}
     </div>
   );
 }

@@ -4,8 +4,8 @@ function Button({ onPress, btnText, size, type, width }) {
   return (
     <button
       type="button"
-      onClick={onPress}
-      class={`btn btn-${type} btn-${size} w-${width}`}
+      onClick={() => onPress()}
+      className={`btn btn-${type} btn-${size} w-${width}`}
     >
       {btnText}
     </button>

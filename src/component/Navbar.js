@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useCart } from "../context/shoppingcart-context";
 
 function Navbar() {
   const [navBarPosition, setNavBarPosition] = useState();
@@ -8,6 +9,7 @@ function Navbar() {
   const location = useLocation();
   const navRef = useRef();
   navRef.current = navBackground;
+  const { totalItems } = useCart();
 
   useEffect(() => {
     if (location.pathname !== "/") {
@@ -46,10 +48,6 @@ function Navbar() {
   return (
     <nav
       className={`navbar navbar-expand-lg navbar-light ${navBarPosition} ${navRef.current}`}
-      // className={`navbar navbar-expand-lg navbar-light fixed-top ${navRef.current}`}
-      // className="navbar navbar-expand-lg navbar-light position-sticky bg-transparent"
-      // className="navbar navbar-expand-lg navbar-light fixed-top bg-light"
-      // className="navbar navbar-expand-lg navbar-light fixed-top bg-transparent"
       id="navbar"
     >
       <div className="container">
@@ -94,6 +92,11 @@ function Navbar() {
                   className={`fa fa-shopping-cart ${navColor}`}
                   style={{ fontSize: "19px" }}
                 ></i>
+                {totalItems > 0 ? (
+                  <span class="position-absolute top-10 start-80 translate-middle p-2 bg-danger border border-light rounded-circle">
+                    <span class="text-white text-sm">{totalItems}</span>
+                  </span>
+                ) : null}
               </Link>
             </li>
           </ul>
