@@ -26,7 +26,7 @@ const CartProvider = (props) => {
   };
 
   useEffect(() => {
-    if (shoppingCart.length !== 0) {
+    if (shoppingCart !== null && shoppingCart.length !== 0) {
       sessionStorage.setItem("cart", JSON.stringify(shoppingCart));
     }
   }, [shoppingCart]);
