@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/pet-store/static/css/main.5456d5de.chunk.css",
-    "main.js": "/pet-store/static/js/main.0162326e.chunk.js",
-    "main.js.map": "/pet-store/static/js/main.0162326e.chunk.js.map",
+    "main.js": "/pet-store/static/js/main.ca5ee13b.chunk.js",
+    "main.js.map": "/pet-store/static/js/main.ca5ee13b.chunk.js.map",
     "runtime-main.js": "/pet-store/static/js/runtime-main.7e8563b5.js",
     "runtime-main.js.map": "/pet-store/static/js/runtime-main.7e8563b5.js.map",
     "static/js/2.ac040e85.chunk.js": "/pet-store/static/js/2.ac040e85.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.7e8563b5.js",
     "static/js/2.ac040e85.chunk.js",
     "static/css/main.5456d5de.chunk.css",
-    "static/js/main.0162326e.chunk.js"
+    "static/js/main.ca5ee13b.chunk.js"
   ]
 }
