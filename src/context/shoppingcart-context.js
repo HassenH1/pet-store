@@ -7,7 +7,7 @@ const CartProvider = (props) => {
   const [totalItems, setTotalItems] = useState(0);
 
   useEffect(() => {
-    setTotalItems(shoppingCart.length);
+    if (shoppingCart !== null) setTotalItems(shoppingCart.length);
   }, [shoppingCart]);
 
   const appendToCart = (product) => {
