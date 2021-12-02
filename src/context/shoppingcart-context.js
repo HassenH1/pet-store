@@ -15,14 +15,37 @@ const CartProvider = (props) => {
   };
 
   const getItemsFromCart = () => {
-    return shoppingCart;
+    return shoppingCart || [];
   };
 
-  console.log(JSON.stringify(shoppingCart, null, 2), "<=-=-=-shoppingCart");
+  const removeItemFromCart = (item) => {
+    setShoppingCart((prev) => {
+      let newVal = prev.filter((prod) => prod.id !== item.id);
+      return [...newVal];
+    });
+  };
+
+  useEffect(() => {
+    if (shoppingCart.length !== 0) {
+      sessionStorage.setItem("cart", JSON.stringify(shoppingCart));
+    }
+  }, [shoppingCart]);
+
+  useEffect(() => {
+    let products = sessionStorage.getItem("cart");
+    console.log(JSON.parse(products), "<=-=-=-what is this from session?");
+    setShoppingCart(JSON.parse(products));
+  }, []);
 
   return (
     <CartContext.Provider
-      value={{ appendToCart, getItemsFromCart, totalItems }}
+      value={{
+        appendToCart,
+        getItemsFromCart,
+        totalItems,
+        removeItemFromCart,
+        shoppingCart,
+      }}
       {...props}
     />
   );

@@ -2,14 +2,15 @@ import React, { useState, useEffect } from "react";
 import { useCart } from "../context/shoppingcart-context";
 
 function ShoppingCart() {
-  const { getItemsFromCart } = useCart();
+  const { getItemsFromCart, removeItemFromCart, shoppingCart } = useCart();
   const [subTotal, setSubTotal] = useState();
   const [total, setTotal] = useState(0);
   const shipping = 5.85;
 
   useEffect(() => {
+    console.log("hitting here?");
     getSubTotal();
-  }, []);
+  }, [shoppingCart]);
 
   useEffect(() => {
     setTotal(subTotal + shipping);
@@ -23,13 +24,8 @@ function ShoppingCart() {
     setSubTotal(sub);
   };
 
-  // const finalTotal = () => {
-  //   let total = subTotal + shipping;
-  //   setTotal(total);
-  // };
-
-  const remove = () => {
-    console.log("should remove from cart");
+  const remove = (item) => {
+    removeItemFromCart(item);
   };
 
   const renderTitle = (
@@ -67,7 +63,7 @@ function ShoppingCart() {
         <div className="col-2 text-center">
           <span>${item.total}</span>
         </div>
-        <div className="col-1 text-center" onClick={remove}>
+        <div className="col-1 text-center" onClick={() => remove(item)}>
           <i class="fa fa-trash text-danger"></i>
         </div>
       </div>
@@ -87,7 +83,6 @@ function ShoppingCart() {
               <p>
                 ${subTotal === 0 ? "0.00" : subTotal && subTotal.toFixed(2)}
               </p>
-              {/* <p>${subTotal && subTotal.toFixed(2)}</p> */}
             </div>
           </div>
           <div className="row justify-content-between">

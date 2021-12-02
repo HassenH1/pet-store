@@ -24,13 +24,9 @@ function ShowProduct() {
 
   const totalBasedOnQuantity = () => {
     let originalPrice = product && product.price.split("$")[1];
-    console.log(originalPrice, "<=-=-=originalPrice");
     let theTotal = quantity * Number(originalPrice);
-    console.log(theTotal, "<=-=-=-=theTotal???");
     setTotal(theTotal);
   };
-
-  console.log(total, "<==-=-=-=what is this total here?");
 
   const modifyQuantity = (type) => {
     if (type === "plus") {
