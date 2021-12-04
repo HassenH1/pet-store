@@ -11,7 +11,10 @@ const CartProvider = (props) => {
   }, [shoppingCart]);
 
   const appendToCart = (product) => {
-    setShoppingCart((prev) => [product, ...prev]);
+    setShoppingCart((prev) => {
+      if (prev !== null) return [product, ...prev];
+      return [product];
+    });
   };
 
   const getItemsFromCart = () => {
@@ -33,7 +36,6 @@ const CartProvider = (props) => {
 
   useEffect(() => {
     let products = sessionStorage.getItem("cart");
-    console.log(JSON.parse(products), "<=-=-=-what is this from session?");
     setShoppingCart(JSON.parse(products));
   }, []);
 

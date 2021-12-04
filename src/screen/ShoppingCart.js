@@ -8,7 +8,6 @@ function ShoppingCart() {
   const shipping = 5.85;
 
   useEffect(() => {
-    console.log("hitting here?");
     getSubTotal();
   }, [shoppingCart]);
 
